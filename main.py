@@ -1,4 +1,6 @@
 from fastapi import FastAPI
+from pydantic import BaseModel
+import pickle
 
 # Define your ML model input schema
 class PredictionInput(BaseModel):
@@ -13,13 +15,13 @@ class PredictionInput(BaseModel):
     Insurance: int
 
 # Load the exported objects
-with open('/content/encoder.pkl', 'rb') as file:
+with open('encoder.pkl', 'rb') as file:
     encoder = pickle.load(file)
 
-with open('/content/scaler.pkl', 'rb') as file:
+with open('scaler.pkl', 'rb') as file:
     scaler = pickle.load(file)
 
-with open('/content/model.pkl', 'rb') as file:
+with open('model.pkl', 'rb') as file:
     model = pickle.load(file)
 
 # Create the FastAPI app

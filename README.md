@@ -12,27 +12,39 @@ Supports real-time predictions by accepting patient information as JSON input an
 
 ## Installation
 
-Clone this repository: git clone <repository_url>
-Install the required dependencies: pip install -r requirements.txt
+
+Clone this repository:
+ ```
+git clone https://github.com/Stella-Achar-Oiro/Fast-API-for-Sepsis-Prediction-App.git
+```
+Install the required dependencies: 
+
+```
+pip install -r requirements.txt
+```
 
 ## Usage
 
-Train the sepsis prediction model: Run the train_model.py script to train the model using the provided dataset.
-Start the FastAPI server: Run the main.py script to start the FastAPI server and make the sepsis prediction API available.
-Send prediction requests: Use a tool like cURL or an API testing tool to send POST requests to the API endpoint (http://localhost:8000/predict) with patient information in JSON format. The API will return the predicted sepsis probability.
+* Train the sepsis prediction model: Run the train_model.py script to train the model using the provided dataset.
+* Start the FastAPI server: Run the main.py script to start the FastAPI server and make the sepsis prediction API available.
+* Send prediction requests: Use a tool like cURL or an API testing tool to send POST requests to the API endpoint (http://localhost:8000/predict) with patient information in JSON format. The API will return the predicted sepsis probability.
 
-##Dockerization
+## Dockerization
 
 The project also provides Docker support to containerize the application. You can build a Docker image using the provided Dockerfile and deploy the application as a container.
 
 To build the Docker image, execute the following command in the project directory:
 
-
+```
 docker build -t sepsis-prediction-api .
+```
+
 To run the Docker container, execute the following command:
 
-
+```
 docker run -p 8000:8000 sepsis-prediction-api
+```
+
 The application will be accessible at http://localhost:8000 inside the Docker container.
 
 ### Contributing
